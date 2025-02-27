@@ -6,7 +6,7 @@ const educationData = [
   {
     institution: "University of Massachusetts Lowell",
     degree: "Master of Science in Computer Engineering",
-    dates: "2022 - 2024",
+    dates: "2023 - 2025",
   },
   {
     institution: "KLE Technological University",
