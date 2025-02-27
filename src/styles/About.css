@@ -1,0 +1,26 @@
+.about {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .about.light-mode {
+    background-color: white;
+    color: #333333;
+  }
+  
+  .about.dark-mode {
+    background-color: #1d242f;
+    color: #ffffff;
+  }
+  
+  .about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }

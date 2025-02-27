@@ -1,0 +1,123 @@
+/* Education Section */
+.education {
+    padding: 60px 5%;
+    text-align: center;
+  }
+  
+  .education-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  /* Education Container */
+  .education-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+  
+  /* Vertical Line */
+  .education-container::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #007bff;
+  }
+  
+  /* Education Item */
+  .education-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    text-align: left;
+  }
+  
+  /* Education Icon */
+  .education-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  /* Education Content */
+  .education-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .education-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .education-content h4 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .education-dates {
+    font-size: 1rem;
+    color: #999;
+  }
+  
+  /* Dark Mode */
+  .dark-mode .education-container::before {
+    background: #4da8da;
+  }
+  
+  .dark-mode .education-icon {
+    background: #4da8da;
+  }
+  
+  .dark-mode .education-content {
+    background: #1a1a2e;
+    color: white;
+  }
+  
+  .dark-mode .education-content h4 {
+    color: #ccc;
+  }
+  
+  .dark-mode .education-dates {
+    color: #aaa;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .education-container {
+      padding-left: 0;
+    }
+  
+    .education-container::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .education-item {
+      padding-left: 0;
+      text-align: center;
+    }
+  
+    .education-icon {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  

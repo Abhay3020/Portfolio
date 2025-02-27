@@ -1,0 +1,13 @@
+.divider {
+    height: 1px;
+    width: 80%;
+    margin: 40px auto;
+  }
+  
+  .divider.light-mode {
+    background-color: black;
+  }
+  
+  .divider.dark-mode {
+    background-color: white;
+  }

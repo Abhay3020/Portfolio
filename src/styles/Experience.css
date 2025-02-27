@@ -1,0 +1,57 @@
+/* EXPERIENCE SECTION */
+.experience {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* TIMELINE ELEMENTS */
+.vertical-timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* TIMELINE CONTENT */
+.vertical-timeline-element-content {
+  background: #1a1a2e;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Make Cards Uniform in Size */
+.vertical-timeline-element-content h3 {
+  font-size: 1.3rem;
+}
+
+.vertical-timeline-element-content p {
+  font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .vertical-timeline {
+    width: 95%;
+  }
+
+  .vertical-timeline-element {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .vertical-timeline-element-content {
+    width: 90%;
+    text-align: left;
+  }
+
+  .vertical-timeline-element-icon {
+    display: none; /* Hide timeline dots */
+  }
+
+  .vertical-timeline::before {
+    display: none; /* Hide vertical line */
+  }
+}

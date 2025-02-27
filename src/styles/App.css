@@ -1,0 +1,34 @@
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Light and Dark Mode */
+:root {
+  --background: #f8f9fa;
+  --text: #333;
+}
+
+.dark-mode {
+  --background: #1d242f;
+  --text: #ffffff;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}

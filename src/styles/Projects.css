@@ -1,0 +1,154 @@
+/* 📌 Main Projects Container */
+.projects-container {
+  padding: 60px 5%;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Dark Mode */
+.dark-mode {
+  background: #0f0f0f;
+  color: white;
+}
+
+/* ✅ Light Mode */
+.light-mode {
+  background: #f5f5f5;
+  color: black;
+}
+
+/* 📌 Title Styling */
+.projects-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* 📌 Flex Layout */
+.projects-wrapper {
+  display: flex;
+  flex-direction: row; /* ✅ Horizontal Layout */
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ✅ Left Side - Project List */
+.project-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 📌 Project Item */
+.project-item {
+  background: none;
+  border: 2px solid transparent;
+  padding: 10px 15px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* ✅ Active Project */
+.project-item.active {
+  border-left: 4px solid #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* ✅ Dark Mode for Project List */
+.dark-mode .project-item {
+  color: white;
+}
+
+.dark-mode .project-item.active {
+  border-left: 4px solid #4da8da;
+  background: rgba(77, 168, 218, 0.2);
+}
+
+/* ✅ Hover Effect */
+.project-item:hover {
+  background: rgba(0, 123, 255, 0.15);
+}
+
+/* ✅ Dark Mode Hover */
+.dark-mode .project-item:hover {
+  background: rgba(77, 168, 218, 0.3);
+}
+
+/* ✅ Right Side - Project Details */
+.project-details {
+  flex: 2;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Dark Mode for Project Details */
+.dark-mode .project-details {
+  background: #1a1a2e;
+  color: white;
+}
+
+/* 📌 Project Title */
+.project-details h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+/* 📌 Project Description */
+.project-details p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* ✅ Dark Mode Text */
+.dark-mode .project-details p {
+  color: #ddd;
+}
+
+/* 📌 GitHub Link */
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.github-link:hover {
+  color: #0056b3;
+}
+
+/* ✅ Dark Mode GitHub Link */
+.dark-mode .github-link {
+  color: #4da8da;
+}
+
+.dark-mode .github-link:hover {
+  color: #3a90c4;
+}
+
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}

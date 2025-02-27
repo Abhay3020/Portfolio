@@ -1,0 +1,31 @@
+/* 📌 Floating Scroll-to-Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .scroll-to-top:hover {
+    background: #0056b3;
+  }
+  
+  /* ✅ Dark Mode Support */
+  .dark-mode .scroll-to-top {
+    background: #4da8da;
+    color: #fff;
+  }
+  
+  .dark-mode .scroll-to-top:hover {
+    background: #3a90c4;
+  }
+  
