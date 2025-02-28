@@ -1,57 +1,122 @@
-/* EXPERIENCE SECTION */
+/* Experience Section */
 .experience {
-  max-width: 1200px;
-  margin: auto;
-  padding: 50px 20px;
+  padding: 60px 5%;
+  text-align: center;
 }
 
-/* TIMELINE ELEMENTS */
-.vertical-timeline {
+.experience-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Experience Container */
+.experience-container {
   position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
 }
 
-/* TIMELINE CONTENT */
-.vertical-timeline-element-content {
+/* Vertical Line */
+.experience-container::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #007bff;
+}
+
+/* Experience Item */
+.experience-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/* Experience Icon */
+.experience-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Experience Content */
+.experience-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.experience-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.experience-content h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.experience-dates {
+  font-size: 1rem;
+  color: #999;
+}
+
+/* Dark Mode */
+.dark-mode .experience-container::before {
+  background: #4da8da;
+}
+
+.dark-mode .experience-icon {
+  background: #4da8da;
+}
+
+.dark-mode .experience-content {
   background: #1a1a2e;
   color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Make Cards Uniform in Size */
-.vertical-timeline-element-content h3 {
-  font-size: 1.3rem;
+.dark-mode .experience-content h4 {
+  color: #ccc;
 }
 
-.vertical-timeline-element-content p {
-  font-size: 1rem;
+.dark-mode .experience-dates {
+  color: #aaa;
 }
 
-/* Mobile Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .vertical-timeline {
-    width: 95%;
+  .experience-container {
+    padding-left: 0;
   }
 
-  .vertical-timeline-element {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
+  .experience-container::before {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .vertical-timeline-element-content {
-    width: 90%;
-    text-align: left;
+  .experience-item {
+    padding-left: 0;
+    text-align: center;
   }
 
-  .vertical-timeline-element-icon {
-    display: none; /* Hide timeline dots */
-  }
-
-  .vertical-timeline::before {
-    display: none; /* Hide vertical line */
+  .experience-icon {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

@@ -12,6 +12,7 @@ import Divider from "@components/Divider";
 import ScrollToTop from "@components/ScrollToTop";
 import "@styles/App.css";
 
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 

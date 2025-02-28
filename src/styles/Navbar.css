@@ -5,6 +5,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar.light-mode {
@@ -15,15 +18,16 @@
   background-color: #1a1a1a;
 }
 
+/* Navbar Container */
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-.navbar ul {
+/* Navbar Links */
+.navbar-links {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -31,87 +35,41 @@
   padding: 0;
 }
 
-.navbar li {
+.navbar-links li {
   display: inline;
 }
 
-.navbar a {
+.navbar-links a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
-.navbar.light-mode a {
+.navbar.light-mode .navbar-links a {
   color: #333;
 }
 
-.navbar.dark-mode a {
+.navbar.dark-mode .navbar-links a {
   color: #ffffff;
 }
 
-.navbar a:hover {
+.navbar-links a:hover {
   color: #007bff;
 }
 
-/* Toggle Switch Styles */
-.toggle-switch {
-  width: 80px; /* Increased width to accommodate icons */
-  height: 30px;
-  background-color: #ccc;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-switch:hover {
-  background-color: #bbb;
-}
-
-.switch {
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.switch.on {
-  transform: translateX(50px); /* Move to the right for dark mode */
-  background-color: #007bff;
-}
-
-.switch.off {
-  transform: translateX(0); /* Move to the left for light mode */
-  background-color: white;
-}
-
-/* Icon Styles */
-.icon {
-  font-size: 14px;
-  color: #333; /* Default icon color */
-}
-
-.switch.on .icon {
-  color: white; /* Icon color in dark mode */
-}
-/* Navbar Actions */
+/* Navbar Actions - Aligning Contact & Toggle to the Right */
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  margin-left: auto; /* Push to the right */
 }
 
+/* Contact Button */
 .contact-button {
   background-color: #007bff;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -125,8 +83,8 @@
 
 /* Toggle Switch */
 .toggle-switch {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,19 +94,56 @@
   transition: 0.3s ease-in-out;
 }
 
-/* Toggle Icon Styling */
+/* Toggle Icon */
 .toggle-icon {
   font-size: 1.5rem;
-  color: #fdd835; /* Default Sun Color */
+  color: #fdd835; /* Sun icon default */
   transition: 0.3s ease-in-out;
 }
 
 /* Dark Mode Toggle */
 .dark-mode .toggle-icon {
-  color: #bb86fc; /* Moon Color in Dark Mode */
+  color: #bb86fc; /* Moon color */
+}
+/* Navbar Dropdown - Light & Dark Mode Fix */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+  }
+
+  /* Light Mode Menu */
+  .light-mode .navbar-links {
+    background: #f8f9fa; /* Light mode background */
+  }
+
+  .light-mode .navbar-links a {
+    color: #333; /* Dark text for light mode */
+  }
+
+  /* Dark Mode Menu */
+  .dark-mode .navbar-links {
+    background: #1a1a1a; /* Dark mode background */
+  }
+
+  .dark-mode .navbar-links a {
+    color: #ffffff; /* White text for dark mode */
+  }
+
+  /* Show Menu when Active */
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2rem;
+  }
 }
 
-/* Hover Effect */
-.toggle-switch:hover {
-  transform: scale(1.1);
-}

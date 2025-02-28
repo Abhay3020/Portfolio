@@ -1,65 +1,63 @@
 import React from "react";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import "@styles/Experience.css";
+import "@styles/Education.css"; // Using the same styles for consistency
+import { FaBriefcase } from "react-icons/fa";
 
-const experiences = [
+const experienceData = [
   {
     title: "Facility Supervisor",
     company: "UMass Lowell Campus Recreation Center",
     date: "December 2023 - Present",
-    description: [
-      "Supervised daily operations of a 65,000 sq. ft. recreation facility.",
-      "Managed and trained a team of student staff.",
-      "Handled facility reservations and event scheduling.",
-      "Ensured proper upkeep and cleanliness of the facility.",
+    responsibilities: [
+      "Supervise daily operations of a 65,000 sq. ft. recreation facility, ensuring safety and efficiency.",
+      "Manage and train a team of student staff, overseeing front desk operations and emergency procedures.",
+      "Coordinate facility scheduling, maintenance, and event planning to optimize space utilization.",
     ],
   },
   {
-    title: "Associate Data Engineer",
-    company: "PricewaterhouseCoopers",
+    title: "Data Engineer",
+    company: "PriceWatrerhouseCoopers",
     date: "May 2022 - May 2023",
-    description: [
-      "Designed scalable data solutions & ETL pipelines.",
-      "Developed optimized SQL queries for large datasets.",
-      "Collaborated with product teams to analyze data requirements.",
+    responsibilities: [
+      "Designed and maintained ETL pipelines for big data processing.",
+      "Implemented machine learning models to analyze customer behavior.",
+      "Improved data storage efficiency by migrating to AWS Redshift.",
     ],
   },
   {
-    title: "Platform Engineer Intern",
-    company: "PricewaterhouseCoopers",
-    date: "May 2021 - Aug 2021",
-    description: [
-      "Executed deployments using Kubernetes and CI/CD tools.",
-      "Worked closely with senior engineers to design robust applications.",
+    title: "Software Developer Intern",
+    company: "PriceWatrerhouseCoopers",
+    date: "March 2022 - May 2022",
+    responsibilities: [
+      "Developed scalable web applications using React and Node.js.",
+      "Optimized backend API performance, reducing response time by 30%.",
+      "Led a team of developers in implementing a microservices architecture.",
     ],
   },
 ];
 
-const Experience = () => {
+const Experience = ({ darkMode }) => {
   return (
-    <section className="experience">
-      <h2>Experience</h2>
-      <VerticalTimeline>
-        {experiences.map((exp, index) => (
-          <VerticalTimelineElement
-            key={index}
-            className="vertical-timeline-element"
-            contentStyle={{ background: "#1a1a2e", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid #007bff" }}
-            date={exp.date}
-            iconStyle={{ background: "#007bff", color: "#fff" }}
-          >
-            <h3 className="vertical-timeline-element-title">{exp.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{exp.company}</h4>
-            <ul>
-              {exp.description.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </VerticalTimelineElement>
+    <section id="experience" className={`education ${darkMode ? "dark-mode" : ""}`}>
+      <h2 className="education-title">Experience</h2>
+      <div className="education-container">
+        {experienceData.map((exp, index) => (
+          <div className="education-item" key={index}>
+            <div className="education-icon">
+              <FaBriefcase />
+            </div>
+            <div className="education-content">
+              <h3>{exp.title}</h3>
+              <h4>{exp.company}</h4>
+              <span className="education-dates">{exp.date}</span>
+              <ul>
+                {exp.responsibilities.map((responsibility, i) => (
+                  <li key={i}>{responsibility}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         ))}
-      </VerticalTimeline>
+      </div>
     </section>
   );
 };
