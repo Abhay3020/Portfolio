@@ -15,7 +15,7 @@ const experienceData = [
   },
   {
     title: "Data Engineer",
-    company: "PriceWatrerhouseCoopers",
+    company: "PriceWaterhouseCoopers",
     date: "May 2022 - May 2023",
     responsibilities: [
       "Designed and maintained ETL pipelines for big data processing.",
@@ -25,7 +25,7 @@ const experienceData = [
   },
   {
     title: "Software Developer Intern",
-    company: "PriceWatrerhouseCoopers",
+    company: "PriceWaterhouseCoopers",
     date: "March 2022 - May 2022",
     responsibilities: [
       "Developed scalable web applications using React and Node.js.",
