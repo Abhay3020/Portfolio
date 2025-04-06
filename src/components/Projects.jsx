@@ -3,6 +3,12 @@ import "@styles/Projects.css";
 
 const projects = [
   {
+    title: "Trump Of the Day",
+    description:
+      "A full-stack news aggregation platform delivering real-time political news. Built with React (Vite), Node.js, and Supabase. Features Google/Facebook OAuth, session-based authentication, scalable APIs with filtering, and content de-duplication. Currently integrating LLM-powered summarization and Reddit-style ranking for enhanced engagement.",
+    link: "https://trumpoftheday.com/",
+  },
+  {
     title: "Real-time Pothole Detection",
     description: "Led an IoT project to enhance road safety by detecting real-time potholes using mobile sensors.",
     link: "https://github.com/Abhay3020/Pothole_detection",
@@ -31,15 +37,15 @@ const projects = [
     title: "PrivNote - Secure Note-Taking Platform",
     description: "A personalized secure note-taking platform that allows users to create, share, and manage encrypted notes.",
     link: "https://github.com/Abhay3020/Comp5130/tree/main",
-  }
+  },
 ];
 
 const Projects = ({ darkMode }) => {
-  const [selectedProject, setSelectedProject] = useState(projects[0]); // Default first project
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
   return (
     <section id="projects" className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}>
-      <h2 className="projects-title">My Projects</h2>
+      <h2 className="projects-title">Projects</h2>
 
       <div className="projects-wrapper">
         {/* ✅ Left Side - Project List */}
@@ -59,8 +65,13 @@ const Projects = ({ darkMode }) => {
         <div className="project-details">
           <h3>{selectedProject.title}</h3>
           <p>{selectedProject.description}</p>
-          <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="github-link">
-            View on GitHub
+          <a
+            href={selectedProject.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-link"
+          >
+            {selectedProject.title === "Trump Of the Day" ? "Visit Live Site" : "View on GitHub"}
           </a>
         </div>
       </div>
