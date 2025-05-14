@@ -1,26 +1,56 @@
+/* About.css - Synced with Global Colors */
+:root {
+  /* Light Mode */
+  --bg-color: #f8f9fa;        /* Matches global --background */
+  --text-color: #333;         /* Matches global --text */
+  --card-bg: #ffffff;
+  --primary-accent: #2563eb;
+  --secondary-accent: #7c3aed;
+  --border-color: #e2e8f0;
+  --highlight-bg: rgba(37, 99, 235, 0.1);
+}
+
+.dark-mode {
+  /* Dark Mode */
+  --bg-color: #1d242f;        /* Matches global .dark-mode --background */
+  --text-color: #ffffff;      /* Matches global .dark-mode --text */
+  --card-bg: #2d3748;
+  --primary-accent: #60a5fa;
+  --secondary-accent: #a78bfa;
+  --border-color: #4a5568;
+  --highlight-bg: rgba(96, 165, 250, 0.1);
+}
+
+/* Structure */
 .about {
-    padding: 60px 20px;
-    text-align: center;
+  padding: 4rem 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Cards */
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Text */
+.section-title {
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Interactive */
+.skill-tag:hover {
+  background: var(--highlight-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 0;
   }
-  
-  .about.light-mode {
-    background-color: white;
-    color: #333333;
-  }
-  
-  .about.dark-mode {
-    background-color: #1d242f;
-    color: #ffffff;
-  }
-  
-  .about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .about p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+}
