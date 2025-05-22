@@ -1,21 +1,19 @@
 /* Navbar Styles */
 .navbar {
-  background-color: #333;
-  padding: 10px 20px;
-  position: sticky;
+  background-color: #000000;
+  padding: 0 24px;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar.light-mode {
-  background-color: #f8f9fa;
-}
-
-.navbar.dark-mode {
-  background-color: #1a1a1a;
+/* Remove margin from main content if present */
+main, .main-content, #main-content, body > div:not(.navbar) {
+  margin-top: 0 !important;
+  padding-top: 64px; /* Adjust to navbar height if needed */
 }
 
 /* Navbar Container */
@@ -23,14 +21,74 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
   width: 100%;
+}
+
+/* Navbar Brand/Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-monogram {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 8px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.navbar-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.navbar-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-right: 6px;
+}
+
+.navbar-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.95;
+  letter-spacing: 0.01em;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-logo:hover {
+  color: #60a5fa;
+}
+
+/* Navbar Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
 }
 
 /* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 3.5rem;
   margin: 0;
   padding: 0;
 }
@@ -40,110 +98,94 @@
 }
 
 .navbar-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.navbar.light-mode .navbar-links a {
-  color: #333;
-}
-
-.navbar.dark-mode .navbar-links a {
-  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
 }
 
 .navbar-links a:hover {
-  color: #007bff;
-}
-
-/* Navbar Actions - Aligning Contact & Toggle to the Right */
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: auto; /* Push to the right */
+  color: #60a5fa;
 }
 
 /* Contact Button */
 .contact-button {
-  background-color: #007bff;
+  background-color: #2563eb;
   color: white;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .contact-button:hover {
-  background-color: #0056b3;
+  background-color: #1d4ed8;
 }
 
-/* Toggle Switch */
-.toggle-switch {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-/* Toggle Icon */
-.toggle-icon {
-  font-size: 1.5rem;
-  color: #fdd835; /* Sun icon default */
-  transition: 0.3s ease-in-out;
-}
-
-/* Dark Mode Toggle */
-.dark-mode .toggle-icon {
-  color: #bb86fc; /* Moon color */
-}
-/* Navbar Dropdown - Light & Dark Mode Fix */
+/* Mobile Menu */
 @media (max-width: 768px) {
-  .navbar-links {
+  .navbar {
+    padding: 1rem 16px;
+    background-color: #000000;
+  }
+
+  .navbar-container {
+    position: relative;
+  }
+
+  .navbar-right {
+    display: none;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     width: 100%;
+    background-color: #000000;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-right.active {
+    display: block;
+  }
+
+  .navbar-links {
     flex-direction: column;
-    display: none;
-    padding: 10px 0;
+    align-items: center;
+    gap: 1.5rem;
   }
 
-  /* Light Mode Menu */
-  .light-mode .navbar-links {
-    background: #f8f9fa; /* Light mode background */
+  .hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
   }
 
-  .light-mode .navbar-links a {
-    color: #333; /* Dark text for light mode */
+  .navbar-brand {
+    gap: 10px;
   }
 
-  /* Dark Mode Menu */
-  .dark-mode .navbar-links {
-    background: #1a1a1a; /* Dark mode background */
+  .navbar-monogram {
+    font-size: 1.4rem;
   }
 
-  .dark-mode .navbar-links a {
-    color: #ffffff; /* White text for dark mode */
+  .navbar-name {
+    font-size: 1.1rem;
   }
 
-  /* Show Menu when Active */
-  .navbar-links.active {
-    display: flex;
+  .navbar-role {
+    font-size: 0.9rem;
   }
 
-  .navbar-links li {
-    text-align: center;
-    padding: 15px 0;
-    font-size: 1.2rem;
+  .navbar-links a {
+    font-size: 1rem;
   }
 }
 

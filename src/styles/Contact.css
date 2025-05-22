@@ -1,111 +1,129 @@
-/* Contact Form Trigger (Click to Open Form) */
-.contact-trigger {
-  cursor: pointer;
-  font-size: 1rem;
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.contact-trigger:hover {
-  color: #0056b3;
-}
-
-/* Background Overlay (Covers Full Screen When Form is Open) */
-.contact-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+/* Contact Section Layout */
+.contact-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100vw;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Floating Contact Form Modal */
-.contact-form-container {
-  background: white;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  z-index: 1000;
+.contact-content-card {
+  background: rgba(20, 20, 20, 0.85);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  border-radius: 24px;
+  padding: 48px 48px 40px 48px;
+  max-width: 420px;
+  min-width: 320px;
+  margin-left: 7vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(59,130,246,0.15);
   position: relative;
 }
 
-/* Contact Form */
-.contact-form {
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+}
+
+.contact-dot {
+  color: #3b82f6;
+  font-size: 4rem;
+  margin-left: 4px;
+}
+
+.contact-subtitle {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+}
+
+.contact-details {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
-.contact-form h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Input & Textarea Fields */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.contact-label {
+  color: #b3b3b3;
   font-size: 1rem;
-  outline: none;
-  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.contact-value {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
-/* Send Message Button */
-.contact-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s ease-in-out;
+.contact-link {
+  display: flex;
+  align-items: center;
+  color: #3b82f6;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  transition: color 0.2s;
 }
 
-.contact-form button:hover {
-  background-color: #0056b3;
+.contact-link:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #3b82f6;
 }
 
-/* Success Message */
-.status-message {
-  color: green;
-  font-size: 1rem;
-  text-align: center;
+.contact-icon {
+  font-size: 1.4rem;
+  margin-right: 8px;
 }
 
-/* Close Button (For Accessibility) */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: none;
-  border: none;
-  color: black;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+.contact-globe-canvas {
+  flex: 1 1 0%;
+  min-width: 350px;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
-.close-btn:hover {
-  color: red;
-  transform: scale(1.2);
+@media (max-width: 900px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+  }
+  .contact-content-card {
+    margin: 32px 0 0 0;
+    max-width: 95vw;
+    min-width: unset;
+    padding: 32px 16px 24px 16px;
+  }
+  .contact-globe-canvas {
+    width: 100vw;
+    min-width: unset;
+    height: 350px;
+    margin-top: 24px;
+  }
+  .contact-title {
+    font-size: 2.2rem;
+  }
 }

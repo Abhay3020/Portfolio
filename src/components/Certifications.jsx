@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from './SectionHeader';
 import "@styles/Certifications.css";
 
 const certifications = [
@@ -31,14 +32,14 @@ const certifications = [
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="certifications-container vertical-scroll">
-      <h2 className="section-title">Certifications</h2>
-      <div className="certifications-list">
+    <section id="certifications" className="certifications-container gradient-bg">
+      <SectionHeader title="Certifications" subtitle="ACHIEVEMENTS" />
+      <div className="certifications-grid">
         {certifications.map((cert, index) => (
-          <div key={index} className="cert-card">
+          <div key={index} className="cert-card fade-in">
             <h3>{cert.title}</h3>
             <p>{cert.summary}</p>
-            <a href={cert.link} target="_blank" rel="noopener noreferrer">
+            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-btn cert-btn-clear">
               View Certificate
             </a>
           </div>

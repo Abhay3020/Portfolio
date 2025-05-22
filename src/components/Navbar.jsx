@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
-import ContactForm from "@components/ContactForm";
 import "@styles/Navbar.css";
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,41 +13,59 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  const HamburgerIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <rect y="4" width="24" height="2" rx="1" fill="currentColor"/>
+      <rect y="11" width="24" height="2" rx="1" fill="currentColor"/>
+      <rect y="18" width="24" height="2" rx="1" fill="currentColor"/>
+    </svg>
+  );
+
+  const CloseIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+
   return (
-    <nav className={`navbar ${darkMode ? "dark-mode" : "light-mode"}`}>
+    <nav className="navbar">
       <div className="navbar-container">
+        <div className="navbar-brand">
+          <img src={process.env.PUBLIC_URL + '/icon.png'} alt="Site Icon" style={{ width: 32, height: 32, marginRight: 12, verticalAlign: 'middle' }} />
+          <span className="navbar-title">
+            <span className="navbar-name">Abhay Ambekar</span>
+            <span className="navbar-role">| Software Developer</span>
+          </span>
+        </div>
 
         {/* Hamburger Menu - Only Visible on Mobile */}
         {isMobile && (
           <button className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
+            {menuOpen ? <CloseIcon /> : <HamburgerIcon />}
           </button>
         )}
 
-        {/* Navigation Links */}
-        <ul className={`navbar-links ${isMobile && !menuOpen ? "hidden" : "active"}`}>
-          <li><Link to="hero" smooth={true} duration={500}>Home</Link></li>
-          <li><Link to="about" smooth={true} duration={500}>About</Link></li>
-          <li><Link to="skills" smooth={true} duration={500}>Skills</Link></li>
-          <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
-          <li><Link to="experience" smooth={true} duration={500}>Experience</Link></li>
-          <li><Link to="education" smooth={true} duration={500}>Education</Link></li>
-          <li><Link to="certifications" smooth={true} duration={500}>Certifications</Link></li>
-        </ul>
-
-        {/* Contact & Dark Mode Toggle (Desktop: Right, Mobile: Next to Hamburger) */}
-        <div className="navbar-actions">
-          <button onClick={() => setIsModalOpen(true)} className="contact-button">
-            Contact
-          </button>
-          <div className="toggle-switch" onClick={toggleDarkMode}>
-            {darkMode ? <FaMoon className="toggle-icon moon-icon" /> : <FaSun className="toggle-icon sun-icon" />}
-          </div>
+        <div className={`navbar-right ${isMobile && !menuOpen ? "hidden" : "active"}`}>
+          <ul className="navbar-links">
+            <li>
+              <Link to="experience" smooth={true} duration={600} offset={-60}>
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link to="projects" smooth={true} duration={600} offset={-60}>
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="contact" smooth={true} duration={600} offset={-60}>
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-
-      {/* Contact Form Modal */}
-      {isModalOpen && <ContactForm onClose={() => setIsModalOpen(false)} />}
     </nav>
   );
 };

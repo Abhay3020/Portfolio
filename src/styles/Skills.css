@@ -1,65 +1,76 @@
-.skills-inline-section {
-  padding: 2rem;
-  max-width: 950px;
-  margin: 0 auto;
+.skills {
+  padding: 60px 0 40px;
+  background-color: #000;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
 }
 
 .skills-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-}
-
-.skills-inline-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.skills-inline-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.category-inline-title {
-  font-weight: 600;
-  min-width: 250px;
-  color: var(--card-title, #fff);
-  font-size: 1rem;
-}
-
-.inline-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  flex: 1;
-}
-
-.skill-pill {
-  background-color: var(--pill-bg, #2c2f48);
-  color: var(--pill-text, #fff);
-  padding: 0.4rem 0.8rem;
-  font-size: 0.85rem;
-  border-radius: 999px;
-  white-space: nowrap;
-  transition: background 0.3s ease;
-}
-
-.skill-pill:hover {
-  background-color: var(--pill-hover, #3c4070);
-}
-/* Default fallback (light mode) */
-.category-inline-title {
-  font-weight: 600;
-  min-width: 250px;
-  font-size: 1rem;
-  color: #333; /* Light mode fallback color */
-}
-
-/* Override for dark mode */
-.dark-mode .category-inline-title {
+  font-size: 48px;
+  font-weight: 500;
   color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.skills-marquee {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-marquee-track {
+  display: flex;
+  align-items: center;
+  animation: skills-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+@keyframes skills-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.skills-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 36px;
+  object-fit: contain;
+  background: none;
+  border: none;
+  box-shadow: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .skills-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 18px;
+  }
+  .skills-marquee {
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+  }
+  .skills-marquee {
+    height: 40px;
+  }
+  .skills-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
 }
