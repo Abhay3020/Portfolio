@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Briefcase, Building2, Maximize2 } from 'lucide-react';
+import { MapPin, Calendar, Briefcase, Building2 } from 'lucide-react';
 
 const ExperienceWrapper = styled.div`
   background: var(--bg-secondary);
@@ -28,63 +28,6 @@ const ExperienceWrapper = styled.div`
   }
 `;
 
-const FullscreenButton = styled(motion.button)`
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: var(--text-primary);
-  z-index: 100;
-
-  svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  &:hover {
-    background: rgba(0, 255, 255, 0.2);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-
-    &::after {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-  }
-
-  &::after {
-    content: 'Fullscreen';
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: rgba(8, 1, 1, 0.9);
-    color: var(--text-primary);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translate(-50%, -4px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    top: 1rem;
-    right: 1rem;
-    width: 36px;
-    height: 36px;
-  }
-`;
 
 const SectionHeader = styled.div`
   text-align: center;
@@ -421,25 +364,8 @@ const Experience = ({ data }) => {
     };
   };
 
-  const toggleFullscreen = (e) => {
-    const container = e.currentTarget.parentElement;
-    if (!document.fullscreenElement) {
-      container.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  };
-
   return (
     <ExperienceWrapper>
-      <FullscreenButton
-        onClick={toggleFullscreen}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        title="Fullscreen"
-      >
-        <Maximize2 size={18} strokeWidth={2} />
-      </FullscreenButton>
       <SectionHeader>
         <SectionSubtitle>
           <Briefcase size={20} />

@@ -694,10 +694,10 @@ function App() {
               <UtilityIcon
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                title="Language"
-                onClick={() => alert('Language switcher coming soon!')}
+                title="Fullscreen"
+                onClick={toggleFullscreen}
               >
-                <Globe size={20} />
+                {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
               </UtilityIcon>
               <UtilityIcon
                 whileHover={{ scale: 1.1 }}

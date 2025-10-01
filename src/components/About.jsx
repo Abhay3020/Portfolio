@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Maximize2 } from 'lucide-react';
+import { Mail, Linkedin, Github, Download } from 'lucide-react';
 
 const AboutContainer = styled.div`
   background: var(--bg-secondary);
@@ -25,64 +25,6 @@ const AboutContainer = styled.div`
   @media (max-width: 768px) {
     padding: 1.5rem;
     min-height: auto;
-  }
-`;
-
-const FullscreenButton = styled(motion.button)`
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #ffffff;
-  z-index: 100;
-
-  svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  &:hover {
-    background: rgba(0, 255, 255, 0.2);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-
-    &::after {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-  }
-
-  &::after {
-    content: 'Fullscreen';
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translate(-50%, -4px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    top: 1rem;
-    right: 1rem;
-    width: 36px;
-    height: 36px;
   }
 `;
 
@@ -339,25 +281,8 @@ const SocialLink = styled(motion.a)`
 `;
 
 const About = ({ data }) => {
-  const toggleFullscreen = (e) => {
-    const container = e.currentTarget.parentElement;
-    if (!document.fullscreenElement) {
-      container.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  };
-
   return (
     <AboutContainer>
-      <FullscreenButton
-        onClick={toggleFullscreen}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        title="Fullscreen"
-      >
-        <Maximize2 size={18} strokeWidth={2} />
-      </FullscreenButton>
       <SectionTitle>About</SectionTitle>
       <AboutContent>
         <ProfileSection>
