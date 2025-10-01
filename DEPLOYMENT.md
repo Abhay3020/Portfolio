@@ -94,6 +94,8 @@ Your site will be live at: `https://your-project.vercel.app`
    - Publish directory: `dist`
 6. Click "Deploy site"
 
+**Note**: The project includes `netlify.toml` configuration file that automatically sets the correct build settings.
+
 Your site will be live at: `https://random-name.netlify.app`
 
 ## Custom Domain Setup
