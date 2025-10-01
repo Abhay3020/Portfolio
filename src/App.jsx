@@ -72,6 +72,7 @@ const Container = styled.div`
   padding-left: 1.5rem;
   
   @media (max-width: 768px) {
+    flex-direction: column;
     padding: 0;
   }
 `;
@@ -131,11 +132,14 @@ const Sidebar = styled(motion.nav)`
   }
 
   @media (max-width: 768px) {
-    width: calc(100% - 3rem);
-    height: auto;
-    position: relative;
-    left: 1.5rem;
-    top: 1.5rem;
+    width: 100%;
+    min-height: auto;
+    position: static;
+    left: auto;
+    top: auto;
+    border-radius: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem;
   }
 `;
@@ -153,6 +157,14 @@ const ProfileSection = styled.div`
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border-color);
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 const ProfileImage = styled.div`
@@ -168,6 +180,14 @@ const ProfileImage = styled.div`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
 `;
 
@@ -219,6 +239,15 @@ const UtilityIcons = styled.div`
   margin-top: auto;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 1rem;
+    border-top: none;
+    border-left: 1px solid var(--border-color);
+    margin-left: 1rem;
+    padding-left: 1rem;
+  }
 `;
 
 const UtilityIcon = styled(motion.div)`
@@ -260,6 +289,9 @@ const NavItems = styled.ul`
     flex-direction: row;
     overflow-x: auto;
     gap: 0.25rem;
+    flex: none;
+    margin-bottom: 1rem;
+    padding: 0;
   }
 `;
 
@@ -292,6 +324,20 @@ const NavItem = styled(motion.li)`
   span {
     font-weight: 500;
     font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+    white-space: nowrap;
+    
+    span {
+      font-size: 0.85rem;
+    }
+    
+    svg {
+      width: 16px;
+    }
   }
 `;
 
@@ -458,7 +504,8 @@ const MainContent = styled.main`
 
   @media (max-width: 768px) {
     margin-left: 0;
-    padding: 1.5rem;
+    padding: 1rem;
+    min-height: auto;
   }
 `;
 
