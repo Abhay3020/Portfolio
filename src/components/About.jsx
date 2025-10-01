@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, Download } from 'lucide-react';
 
-const AboutContainer = styled.div`
+const AboutContainer = styled(motion.div)`
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -12,6 +12,8 @@ const AboutContainer = styled.div`
   transition: all 0.3s ease;
   min-height: 600px;
   position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);

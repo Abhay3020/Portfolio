@@ -466,6 +466,9 @@ const ContentWrapper = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+  perspective: 1000px;
+  perspective-origin: center center;
+  position: relative;
   
   @media (max-width: 1600px) {
     max-width: 1200px;
@@ -473,6 +476,24 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 1200px) {
     max-width: 100%;
+  }
+
+  /* Page shadow effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: -20px;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+      rgba(0, 0, 0, 0.1) 0%, 
+      transparent 20%, 
+      transparent 80%, 
+      rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
   }
 `;
 
@@ -484,6 +505,8 @@ const ContentCard = styled(motion.div)`
   margin-bottom: 2rem;
   transition: all 0.3s ease;
   min-height: 500px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);
@@ -727,23 +750,175 @@ function App() {
                 <About 
                   key="about"
                   data={portfolioData.about}
+                  initial={{ 
+                    opacity: 0,
+                    rotateY: -90,
+                    x: -50,
+                    scale: 0.8,
+                    transformOrigin: "left center"
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    rotateY: 0,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    rotateY: 90,
+                    x: 50,
+                    scale: 0.8,
+                    transformOrigin: "right center",
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
                 />
               )}
 
               {activeSection === 'projects' && (
-                <Projects key="projects" data={portfolioData.projects} />
+                <Projects 
+                  key="projects" 
+                  data={portfolioData.projects}
+                  initial={{ 
+                    opacity: 0,
+                    rotateY: -90,
+                    x: -50,
+                    scale: 0.8,
+                    transformOrigin: "left center"
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    rotateY: 0,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    rotateY: 90,
+                    x: 50,
+                    scale: 0.8,
+                    transformOrigin: "right center",
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                />
               )}
 
               {activeSection === 'experience' && (
-                <Experience key="experience" data={portfolioData.experience} />
+                <Experience 
+                  key="experience" 
+                  data={portfolioData.experience}
+                  initial={{ 
+                    opacity: 0,
+                    rotateY: -90,
+                    x: -50,
+                    scale: 0.8,
+                    transformOrigin: "left center"
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    rotateY: 0,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    rotateY: 90,
+                    x: 50,
+                    scale: 0.8,
+                    transformOrigin: "right center",
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                />
               )}
 
               {activeSection === 'skills' && (
-                <Skills key="skills" data={portfolioData.skills} />
+                <Skills 
+                  key="skills" 
+                  data={portfolioData.skills}
+                  initial={{ 
+                    opacity: 0,
+                    rotateY: -90,
+                    x: -50,
+                    scale: 0.8,
+                    transformOrigin: "left center"
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    rotateY: 0,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    rotateY: 90,
+                    x: 50,
+                    scale: 0.8,
+                    transformOrigin: "right center",
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                />
               )}
 
               {activeSection === 'education' && (
-                <Education key="education" data={portfolioData.education} />
+                <Education 
+                  key="education" 
+                  data={portfolioData.education}
+                  initial={{ 
+                    opacity: 0,
+                    rotateY: -90,
+                    x: -50,
+                    scale: 0.8,
+                    transformOrigin: "left center"
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    rotateY: 0,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    rotateY: 90,
+                    x: 50,
+                    scale: 0.8,
+                    transformOrigin: "right center",
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }
+                  }}
+                />
               )}
             </AnimatePresence>
           </ContentWrapper>

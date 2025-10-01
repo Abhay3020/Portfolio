@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { GraduationCap, University, Award } from 'lucide-react';
 
-const EducationContainer = styled.div`
+const EducationContainer = styled(motion.div)`
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -12,6 +12,8 @@ const EducationContainer = styled.div`
   transition: all 0.3s ease;
   min-height: 600px;
   position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);
@@ -39,7 +41,7 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
 `;
 
-const EducationGrid = styled.div`
+const EducationGrid = styled(motion.div)`
   display: grid;
   gap: 2rem;
 `;
@@ -71,7 +73,7 @@ const EducationItem = styled(motion.div)`
   }
 `;
 
-const DegreeIcon = styled.div`
+const DegreeIcon = styled(motion.div)`
   flex-shrink: 0;
   width: 100px;
   height: 100px;
@@ -103,7 +105,7 @@ const DegreeIcon = styled.div`
   }
 `;
 
-const DegreeInfo = styled.div`
+const DegreeInfo = styled(motion.div)`
   flex: 1;
 `;
 

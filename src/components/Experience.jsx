@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Briefcase, Building2 } from 'lucide-react';
 
-const ExperienceWrapper = styled.div`
+const ExperienceWrapper = styled(motion.div)`
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -12,6 +12,8 @@ const ExperienceWrapper = styled.div`
   transition: all 0.3s ease;
   min-height: 600px;
   position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);
@@ -29,7 +31,7 @@ const ExperienceWrapper = styled.div`
 `;
 
 
-const SectionHeader = styled.div`
+const SectionHeader = styled(motion.div)`
   text-align: center;
   margin-bottom: 3rem;
 `;
@@ -62,7 +64,7 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const ExperienceList = styled.div`
+const ExperienceList = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -113,7 +115,7 @@ const ExperienceCard = styled(motion.div)`
   }
 `;
 
-const CompanyLogoSection = styled.div`
+const CompanyLogoSection = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -122,7 +124,7 @@ const CompanyLogoSection = styled.div`
   padding-top: 0.5rem;
 `;
 
-const CompanyLogo = styled.div`
+const CompanyLogo = styled(motion.div)`
   width: 110px;
   height: 110px;
   display: flex;
@@ -169,7 +171,7 @@ const CompanyLogo = styled.div`
   }
 `;
 
-const ExperienceContent = styled.div`
+const ExperienceContent = styled(motion.div)`
   flex: 1;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -190,7 +192,7 @@ const ExperienceContent = styled.div`
   }
 `;
 
-const ExperienceHeader = styled.div`
+const ExperienceHeader = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -202,7 +204,7 @@ const ExperienceHeader = styled.div`
   }
 `;
 
-const JobInfo = styled.div`
+const JobInfo = styled(motion.div)`
   flex: 1;
 `;
 
@@ -215,7 +217,7 @@ const JobTitle = styled.h3`
   line-height: 1.3;
 `;
 
-const CompanyInfo = styled.div`
+const CompanyInfo = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -249,7 +251,7 @@ const Location = styled.span`
   }
 `;
 
-const DateRange = styled.div`
+const DateRange = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -303,7 +305,7 @@ const Responsibilities = styled.ul`
   }
 `;
 
-const TechTags = styled.div`
+const TechTags = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;

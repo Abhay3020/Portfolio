@@ -7,7 +7,7 @@ import {
   Palette, Globe2, BarChart3, Monitor, Smartphone as Phone
 } from 'lucide-react';
 
-const SkillsWrapper = styled.div`
+const SkillsWrapper = styled(motion.div)`
   padding: 3rem;
   border-radius: 12px;
   background: var(--bg-secondary);
@@ -17,6 +17,8 @@ const SkillsWrapper = styled.div`
   transition: all 0.3s ease;
   min-height: 600px;
   position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);
@@ -44,11 +46,11 @@ const SectionTitle = styled.h2`
 `;
 
 // Top Cards Section
-const TopCardsSection = styled.div`
+const TopCardsSection = styled(motion.div)`
   margin-bottom: 3rem;
 `;
 
-const TopCardsTitle = styled.div`
+const TopCardsTitle = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -67,7 +69,7 @@ const TopCardsTitle = styled.div`
   }
 `;
 
-const TopCardsGrid = styled.div`
+const TopCardsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -113,7 +115,7 @@ const TopCard = styled(motion.div)`
   }
 `;
 
-const TopCardIcon = styled.div`
+const TopCardIcon = styled(motion.div)`
   width: 60px;
   height: 60px;
   margin: 0 auto 1rem;
@@ -145,11 +147,11 @@ const TopCardDescription = styled.p`
 `;
 
 // Skills Grid Section
-const SkillsSection = styled.div`
+const SkillsSection = styled(motion.div)`
   margin-top: 3rem;
 `;
 
-const SkillsSectionTitle = styled.div`
+const SkillsSectionTitle = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -169,7 +171,7 @@ const SkillsSectionTitle = styled.div`
   }
 `;
 
-const SkillsGrid = styled.div`
+const SkillsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -217,14 +219,14 @@ const SkillCard = styled(motion.div)`
   }
 `;
 
-const SkillHeader = styled.div`
+const SkillHeader = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 `;
 
-const SkillIcon = styled.div`
+const SkillIcon = styled(motion.div)`
   width: 40px;
   height: 40px;
   display: flex;
@@ -241,7 +243,7 @@ const SkillIcon = styled.div`
   }
 `;
 
-const SkillInfo = styled.div`
+const SkillInfo = styled(motion.div)`
   flex: 1;
 `;
 
@@ -268,13 +270,13 @@ const SkillDescription = styled.p`
   line-height: 1.4;
 `;
 
-const SkillLevel = styled.div`
+const SkillLevel = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
 `;
 
-const ProgressBar = styled.div`
+const ProgressBar = styled(motion.div)`
   flex: 1;
   height: 6px;
   background: rgba(255, 255, 255, 0.1);

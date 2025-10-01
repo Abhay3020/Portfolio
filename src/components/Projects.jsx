@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
-const ProjectsContainer = styled.div`
+const ProjectsContainer = styled(motion.div)`
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -12,6 +12,8 @@ const ProjectsContainer = styled.div`
   transition: all 0.3s ease;
   min-height: 600px;
   position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   &:hover {
     border-color: var(--accent-color);
@@ -39,7 +41,7 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
 `;
 
-const ProjectsGrid = styled.div`
+const ProjectsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
@@ -83,7 +85,7 @@ const ProjectCard = styled(motion.div)`
   }
 `;
 
-const ProjectHeader = styled.div`
+const ProjectHeader = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -97,7 +99,7 @@ const ProjectTitle = styled.h3`
   letter-spacing: -0.01em;
 `;
 
-const ProjectLinks = styled.div`
+const ProjectLinks = styled(motion.div)`
   display: flex;
   gap: 0.75rem;
 `;
@@ -133,7 +135,7 @@ const ProjectDescription = styled.p`
   flex: 1;
 `;
 
-const TechStack = styled.div`
+const TechStack = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
